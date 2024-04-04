@@ -56,19 +56,6 @@ def get_coordinates(dataset_name):
     # # remove NaN
     # raw_df = raw_df.dropna()
     
-<<<<<<< HEAD
-    xyz = open(f'{DATASET_DIR_PATH}/{file_name}')
-    
-    coordinates = []
-    for row in xyz:
-        x, y, z = row.split(',')
-        coordinates.append([float(x), float(y), float(z)])
-        
-    # coordinates = raw_df.to_numpy(dtype=np.float32)
-    coordinates = np.array(coordinates)
-    coordinates = coordinates.reshape(shape)
-=======
-    # xyz = open(f'{DATASET_DIR_PATH}/{file_name}')
     df = df.read_csv(f'{DATASET_DIR_PATH}/{file_name}', sep=' ')
     
     coordinates = []
@@ -87,7 +74,6 @@ def get_coordinates(dataset_name):
 
     shape_ = [D1, shape[1], 3]
     coordinates = coordinates.reshape(shape_)
->>>>>>> 4738741 (First commit)
 
     # reshape to series of atoms coordinates for each frame
     (x1, y1, z1) = coordinates.shape
